@@ -1,0 +1,261 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* 夜間模式樣式 */
+body.night-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* 夜間模式下的標題 */
+body.night-mode header {
+    background-color: #1e1e1e;
+    color: #00ff6c;
+}
+
+/* 夜間模式下的按鈕 */
+body.night-mode .nav-button {
+    background-color: #00ff6c;
+    color: white;
+}
+
+body.night-mode .nav-button:hover {
+    background-color: #00cc57;
+}
+
+body.night-mode footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.night-mode form input, body.night-mode form textarea {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+}
+
+/* 語言選單的背景顏色在夜間模式下 */
+body.night-mode #languageSelect {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+body.night-mode #languageSelect option {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+body.night-mode #languageSelect option:hover {
+    background-color: #00cc57;
+    color: white;
+}
+
+
+/* 科幻模式下網站背景設定為黑色到深綠的漸層 */
+body:not(.night-mode) {
+    background: linear-gradient(to bottom, #000000, #004d33); /* 由黑色到深綠色的漸層 */
+    transition: background 0.3s ease; /* 漸變效果，讓背景切換更平滑 */
+}
+
+/* 夜間模式的背景可以設置為其他顏色 */
+body.night-mode {
+    background-color: #121212; /* 夜間模式背景 */
+}
+
+/* 科幻模式下網站背景設定為黑色到深綠的漸層，並且字體顏色變為白色 */
+body:not(.night-mode) {
+    background: linear-gradient(to bottom, #000000, #004d33); /* 由黑色到深綠色的漸層 */
+    color: white; /* 科幻模式下字體顏色為白色 */
+    transition: background 0.3s ease, color 0.3s ease; /* 漸變效果，讓背景和字體顏色切換更平滑 */
+}
+
+/* 夜間模式的背景和字體顏色 */
+body.night-mode {
+    background-color: #121212; /* 夜間模式背景 */
+    color: #e0e0e0; /* 夜間模式字體顏色 */
+}
+
+
+
+/* 頁首 */
+header {
+    background-color: #1e1e1e;
+    color: #00ff6c;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+/* 導航 */
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* 共同的按鈕樣式（確保白日 & 黑夜模式大小一致） */
+.nav-button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    border: 2px solid;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease-in-out;
+}
+
+/* 增加按鈕之間的間隔 */
+body:not(.night-mode) .nav-button {
+    border: 2px solid transparent; /* 設定透明邊框，光繞著走 */
+    position: relative;
+    box-shadow: 0 0 10px #00ff6c, 0 0 20px #00ff6c; /* 設定霓虹燈初始效果 */
+    animation: neonGlow 2s infinite linear; /* 設定霓虹燈環繞跑動 */
+    margin-right: 15px; /* 增加按鈕之間的右邊距，這樣按鈕之間會有更多的間隙 */
+}
+
+/* 當按鈕是最後一個時，不需要右邊距 */
+body:not(.night-mode) .nav-button:last-child {
+    margin-right: 0;
+}
+
+/* 定義跑馬燈邊框的光繞動畫 */
+@keyframes neonBorder {
+    0% {
+        border: 2px solid #00ff6c;
+        box-shadow: 0 0 5px #00ff6c, 0 0 10px #00ff6c, 0 0 20px #00ff6c, 0 0 40px #00ff6c;
+    }
+    25% {
+        border: 2px solid #00cc57;
+        box-shadow: 0 0 5px #00cc57, 0 0 10px #00cc57, 0 0 20px #00cc57, 0 0 40px #00cc57;
+    }
+    50% {
+        border: 2px solid #00ff6c;
+        box-shadow: 0 0 5px #00ff6c, 0 0 10px #00ff6c, 0 0 20px #00ff6c, 0 0 40px #00ff6c;
+    }
+    75% {
+        border: 2px solid #00cc57;
+        box-shadow: 0 0 5px #00cc57, 0 0 10px #00cc57, 0 0 20px #00cc57, 0 0 40px #00cc57;
+    }
+    100% {
+        border: 2px solid #00ff6c;
+        box-shadow: 0 0 5px #00ff6c, 0 0 10px #00ff6c, 0 0 20px #00ff6c, 0 0 40px #00ff6c;
+    }
+}
+
+/* 科幻模式下的按鈕邊框樣式 */
+body:not(.night-mode) .nav-button {
+    padding: 10px 20px;
+    background-color: #00ff6c;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid #00ff6c; /* 邊框設為綠色 */
+    animation: neonBorder 1.5s ease-in-out infinite; /* 應用跑馬燈邊框動畫 */
+}
+
+/* 科幻模式下按鈕懸停效果 */
+body:not(.night-mode) .nav-button:hover {
+    background-color: #00cc57;
+    animation: none; /* 停止動畫，讓顏色變化 */
+}
+
+/* 夜間模式下的按鈕樣式 */
+body.night-mode .nav-button {
+    background-color: #00ff6c;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+/* 黑夜模式的按鈕 */
+.night-mode .nav-button {
+    background: linear-gradient(45deg, #222, #444); /* 深色系漸變 */
+    color: #ddd;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* 黑夜模式 hover 效果 */
+.night-mode .nav-button:hover {
+    background: linear-gradient(45deg, #444, #666);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+
+/* 主體內容 */
+main {
+    padding: 20px;
+}
+
+main h2 {
+    color: #00ff6c;
+}
+
+ul {
+    line-height: 1.8;
+}
+
+footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 10px;
+}
+
+/* 表單樣式 */
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1em;
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+}
+
+form button {
+    background-color: #00ff6c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #00cc57;
+}

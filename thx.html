@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sean的個人網頁</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="website icon" type="image/png" href="sean_img.png">
+</head>
+<body>
+    <header>
+        <h1 id="flashingTitle">sean的個人網頁</h1>
+        <p>如果可以給五年前的自己一句忠告，你會說什麼？</p>
+        <p>If you could give one piece of advice to yourself five years ago, what would it be?</p>
+        <button id="nightModeButton" onclick="toggleNightMode()">切換夜間模式</button>
+        <select id="languageSelect" onchange="changeLanguage(this)">
+            <option value="zh-Hant">繁體中文(chinese)</option>
+            <option value="en">英文(English)</option>
+        </select>
+    </header>
+
+    <nav>
+        <div class="button-container">
+            <button class="nav-button" id="homeButton" onclick="location.href='home.html'">首頁</button>
+            <button class="nav-button" id="aboutButton" onclick="location.href='about.html'">我的資訊</button>
+            <button class="nav-button" id="contactButton" onclick="location.href='contact.html'">聯絡方式</button>
+            <button class="nav-button" id="questionButton" onclick="location.href='question.html'">提問</button>
+        </div>
+    </nav>
+
+    <main id="mainContent">
+        <h2>感謝您的提問！</h2>
+        <p>我們已經收到您的問題，我會盡快回覆。</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 sean | 個人網頁</p>
+    </footer>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

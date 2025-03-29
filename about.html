@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sean的個人網頁</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="website icon" type="image/png" href="sean_img.png">
+</head>
+<body>
+    <header>
+        <h1 id="flashingTitle">sean的個人網頁</h1>
+        <p>如果可以給五年前的自己一句忠告，你會說什麼？</p>
+        <p>If you could give one piece of advice to yourself five years ago, what would it be?</p>
+        <button id="nightModeButton" onclick="toggleNightMode()">切換夜間模式</button>
+        <select id="languageSelect" onchange="changeLanguage(this)">
+            <option value="zh-Hant">繁體中文(chinese)</option>
+            <option value="en">英文(English)</option>
+        </select>
+    </header>
+
+    <nav>
+        <div class="button-container">
+            <button class="nav-button" id="homeButton" onclick="location.href='home.html'">首頁</button>
+            <button class="nav-button" id="aboutButton" onclick="location.href='about.html'">我的資訊</button>
+            <button class="nav-button" id="contactButton" onclick="location.href='contact.html'">聯絡方式</button>
+            <button class="nav-button" id="questionButton" onclick="location.href='question.html'">提問</button>
+        </div>
+    </nav>
+
+    <main id="mainContent">
+        <h2>我的資訊</h2>
+        <ul>
+            <li><strong>興趣：</strong>寫程式、看書、打遊戲</li>
+            <li><strong>生日：</strong>2011年2月23日</li>
+            <li><strong>星座: </strong>雙魚♓</li>
+            <li><strong>個性: </strong>不知道😗, 我是社恐<del>(恐怖分子)</del></li>
+            <li><strong>會寫的程式語言：</strong>Python、C、C++、HTML、CSS、JavaScript（不太厲害）</li>
+        </ul>
+        <h2>檢定/競賽</h2>
+        <ul>
+            <li>APCS : 4+3</li>
+            <li>2023: YTP 初賽第8</li>
+            <li>2024: YTP 決賽第14</li>
+            <a href="https://apcs.csie.ntnu.edu.tw/">APCS</a>
+        </ul>
+        <h2>證照</h2>
+        <ul>
+            <li>MTA-微軟專業應用技術國際認證(python)<h5>(5年級考的)</h5></li>
+        </ul>
+            <h2>好友的網站</h2>
+        <ul>
+            <li><a href="https://hung-liu.github.io/">hung's web</a></li>
+        </ul>
+        <h2>圖片</h2>
+        <img src="MTA.png"/>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 sean | 個人網頁</p>
+    </footer>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sean's Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="website icon" type="image/png" href="sean_img.png">
+</head>
+<body>
+    <header>
+        <h1 id="flashingTitle">Sean's Personal Website</h1>
+        <p>If you could give one piece of advice to yourself five years ago, what would it be?</p>
+        <button id="nightModeButton" onclick="toggleNightMode()">切換夜間模式</button>
+        <select id="languageSelect" onchange="changeLanguage(this)">
+            <option value="zh-Hant">繁體中文(chinese)</option>
+            <option value="en">英文(English)</option>
+        </select>
+    </header>
+
+    <nav>
+        <div class="button-container">
+            <button class="nav-button" id="homeButton" onclick="location.href='home.html'">home</button>
+            <button class="nav-button" id="aboutButton" onclick="location.href='about.html'">about</button>
+            <button class="nav-button" id="contactButton" onclick="location.href='contact.html'">contact</button>
+            <button class="nav-button" id="questionButton" onclick="location.href='question.html'">question</button>
+        </div>
+    </nav>
+
+    <main id="mainContent">
+        <h2>Hello!</h2>
+        <p>I am Sean, welcome to my personal website</p>
+        <h2>.</h2>
+        <h2>.</h2>
+        <h2>.</h2>
+        <h2>.</h2>
+        <h2>.</h2>
+        <h2>.</h2>
+        <h2>.</h2>
+        <h2>.</h2>
+        <h2>.</h2>
+        <h2>.</h2>
+        <h2>.</h2>
+        <h2>XD</h2>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 sean | Personal Website</p>
+    </footer>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
