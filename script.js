@@ -132,24 +132,45 @@ function loadPage(page) {
     mainContent.innerHTML = pages[page];
 
     if (page === 'question') {
+        // const form = document.getElementById('questionForm');
+
+
+        // form.addEventListener('submit', function(event) {
+        //     event.preventDefault();  // 這行非常重要，它防止表單被瀏覽器默認提交
+            
+        //     const formStatus = document.getElementById('formStatus');
+        //     formStatus.style.display = 'block';
+        //     formStatus.innerHTML = '正在提交您的問題...';
+        
+        //     emailjs.sendForm('service_za8o36i', 'template_p22yav2', form)
+        //         .then(function(response) {
+        //             window.location.href = "thx.html";  // 成功後跳轉
+        //         }, function(error) {
+        //             console.error("EmailJS 發送錯誤：", error);
+        //             formStatus.innerHTML = '提交時發生錯誤，請稍後再試！';
+        //         });
+        // });
         const form = document.getElementById('questionForm');
 
+form.addEventListener('submit', function(event) {
+    event.preventDefault();  // 防止表單自動提交
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();  // 這行非常重要，它防止表單被瀏覽器默認提交
-            
-            const formStatus = document.getElementById('formStatus');
-            formStatus.style.display = 'block';
-            formStatus.innerHTML = '正在提交您的問題...';
-        
-            emailjs.sendForm('service_za8o36i', 'template_p22yav2', form)
-                .then(function(response) {
-                    window.location.href = "thx.html";  // 成功後跳轉
-                }, function(error) {
-                    console.error("EmailJS 發送錯誤：", error);
-                    formStatus.innerHTML = '提交時發生錯誤，請稍後再試！';
-                });
+    const formStatus = document.getElementById('formStatus');
+    formStatus.style.display = 'block';
+    formStatus.innerHTML = '正在提交您的問題...';
+
+    emailjs.sendForm('service_za8o36i', 'template_p22yav2', form)
+        .then(function(response) {
+            console.log("EmailJS 發送成功：", response);  // 輸出成功訊息
+            window.location.href = "thx.html";  // 成功後跳轉
+        }, function(error) {
+            console.error("EmailJS 發送錯誤：", error);  // 輸出錯誤訊息
+            formStatus.innerHTML = '提交時發生錯誤，請稍後再試！';
         });
+});
+
+
+        
         
         // form.addEventListener('submit', function(event) {
         //     event.preventDefault();
