@@ -139,7 +139,6 @@ function sub(event) {
     emailjs.sendForm('service_za8o36i', 'template_p22yav2', form)
         .then(function(response) {
             // 提交成功後跳轉
-            console.log("成功!!成功!!")
             window.location.href = 'thx.html';  // 跳轉到感謝頁面
         }, function(error) {
             formStatus.innerHTML = '提交時發生錯誤，請稍後再試！';
