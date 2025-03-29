@@ -134,27 +134,37 @@ function loadPage(page) {
     if (page === 'question') {
         const form = document.getElementById('questionForm');
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
 
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();  // 這行非常重要，它防止表單被瀏覽器默認提交
+            
             const formStatus = document.getElementById('formStatus');
             formStatus.style.display = 'block';
             formStatus.innerHTML = '正在提交您的問題...';
-            
+        
             emailjs.sendForm('service_za8o36i', 'template_p22yav2', form)
                 .then(function(response) {
                     window.location.href = "thx.html";  // 成功後跳轉
                 }, function(error) {
-                    formStatus.innerHTML = '提交時發生錯誤，請稍後再試！';  // 發生錯誤時顯示提示
+                    console.error("EmailJS 發送錯誤：", error);
+                    formStatus.innerHTML = '提交時發生錯誤，請稍後再試！';
                 });
-
-            // emailjs.sendForm('service_za8o36i', 'template_p22yav2', form)
-            //     .then(function(response) {
-            //         window.location.href = "thx.html";
-            //     }, function(error) {
-            //         formStatus.innerHTML = '提交時發生錯誤，請稍後再試！';
-            //     });
         });
+        
+        // form.addEventListener('submit', function(event) {
+        //     event.preventDefault();
+
+        //     const formStatus = document.getElementById('formStatus');
+        //     formStatus.style.display = 'block';
+        //     formStatus.innerHTML = '正在提交您的問題...';
+
+        //     emailjs.sendForm('service_za8o36i', 'template_p22yav2', form)
+        //         .then(function(response) {
+        //             window.location.href = "thx.html";
+        //         }, function(error) {
+        //             formStatus.innerHTML = '提交時發生錯誤，請稍後再試！';
+        //         });
+        // });
     }
 }
 document.addEventListener("contextmenu", (event) => event.preventDefault());
